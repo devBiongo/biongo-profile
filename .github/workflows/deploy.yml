@@ -1,4 +1,4 @@
-name: Build and Deploy to GitHub Pages
+name: Build and Deploy using github cicd
 
 # 触发机制
 on:
