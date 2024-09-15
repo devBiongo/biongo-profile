@@ -1,0 +1,3 @@
+echo -e "\033[1;34mchecking code......\033[0m"
+
+npx lint-staged
