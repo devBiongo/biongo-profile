@@ -62,6 +62,8 @@ jobs:
       # 构建
       - name: build
         run: npm run build
+      - name: search............
+        run: sudo docker images
       # 移除历史镜像
       - name: remove docker image and container
         run: |
