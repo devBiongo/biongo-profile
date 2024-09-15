@@ -4,10 +4,14 @@ WORKDIR /app
 
 COPY package*.json ./
 
+COPY pnpm-lock.yaml ./
+
 COPY . .
 
-RUN npm install
+RUN npm install -g pnpm
+
+RUN pnpm install
 
 EXPOSE 3000
 
-CMD [ "npm","run","dev" ]
+CMD [ "pnpm","dev" ]
