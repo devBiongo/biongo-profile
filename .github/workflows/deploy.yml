@@ -66,6 +66,8 @@ jobs:
         run: |
           docker rm -f biongo-profile || true
           docker rmi -f biongo-profile || true
+      - name: install docker-compose
+        run: sudo apt install docker-compose
       # 构建docker镜像
       - name: build and run docker image
         run: docker-compose up -d
