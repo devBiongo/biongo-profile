@@ -8,11 +8,10 @@ const customPrefix = 'APP_';
 const envContent = Object.entries(process.env)
   .filter(([key]) => key.startsWith(customPrefix))
   .map(([key, value]) => {
-    console.log(222111, `${key}=${value}`);
     return `${key}=${value}`;
   })
   .join('\n');
-
+console.log(111, envContent);
 fs.writeFile(envFilePath, envContent, (err) => {
   if (err) {
     console.error('Error writing to .env file', err);

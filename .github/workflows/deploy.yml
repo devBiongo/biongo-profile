@@ -61,7 +61,6 @@ jobs:
         run: node ./scripts/env.js
         env:
           APP_AAA: ${{ secrets.TEST }}
-          APP_BBB: ${{ secrets.SSH_HOST }}
       # 移除历史镜像
       - name: remove docker image and container
         run: |
