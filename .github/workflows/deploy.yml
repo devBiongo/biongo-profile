@@ -22,6 +22,9 @@ jobs:
       # 指纹
       SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOST }}
     steps:
+      - name: print
+        shell: bash
+        run: echo ${{ secrets.SSH_HOST }}
       # 创建ssh目录, 并启动ssh代理
       - name: setup ssh
         shell: bash
