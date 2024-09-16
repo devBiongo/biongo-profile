@@ -68,7 +68,7 @@ jobs:
           docker rmi -f biongo-profile || true
       # 构建docker镜像
       - name: build and run docker image
-        run: docker-compose up
+        run: docker-compose up -d
       # # 构建docker镜像
       # - name: build docker image
       #   run: docker build --no-cache -f ./Dockerfile -t biongo-profile .
