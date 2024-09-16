@@ -73,7 +73,7 @@ export default function Introduce() {
           active:scale-105 transition
         "
         >
-          Connect
+          Contact
           <Mail color="#9ca3af" />
         </Link>
         <a
