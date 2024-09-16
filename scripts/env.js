@@ -11,7 +11,7 @@ const envContent = Object.entries(process.env)
     return `${key}=${value}`;
   })
   .join('\n');
-console.log(111, envContent);
+
 fs.writeFile(envFilePath, envContent, (err) => {
   if (err) {
     console.error('Error writing to .env file', err);
