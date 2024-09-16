@@ -15,6 +15,6 @@ fs.writeFile(envFilePath, envContent, (err) => {
   if (err) {
     console.error('Error writing to .env file', err);
   } else {
-    console.log('.env file created successfully!');
+    console.log('.env file created successfully!', String(test).length);
   }
 });
