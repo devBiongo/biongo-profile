@@ -8,6 +8,7 @@ const customPrefix = 'APP_';
 const envContent = Object.entries(process.env)
   .filter(([key]) => key.startsWith(customPrefix))
   .map(([key, value]) => {
+    console.log(key);
     return `${key}=${value}`;
   })
   .join('\n');
