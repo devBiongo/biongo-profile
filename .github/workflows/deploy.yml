@@ -58,9 +58,10 @@ jobs:
           node-version: 20.9
       # 运行 Node.js 脚本，环境变量将自动注入
       - name: Run Node.js script
-        run: node ./script/create-env.js
+        run: node ./scripts/env.js
         env:
-          TEST: ${{ secrets.TEST }}
+          aaa: ${{ secrets.TEST }}
+          bbb: ${{ secrets.SSH_HOST }}
       # 移除历史镜像
       - name: remove docker image and container
         run: |
