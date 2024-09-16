@@ -53,8 +53,8 @@
   },
   "lint-staged": {
     "src/**/*.{ts,tsx,js,jsx}": [
-      "p lint",
-      "p format"
+      "pnpm lint",
+      "pnpm format"
     ]
   }
 }
