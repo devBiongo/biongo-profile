@@ -9,7 +9,7 @@ on:
 jobs:
   publish:
     # 指定环境, 即创建环境机密时, 给环境的命名. 当然如果你创建的是仓库机密, 则无需下面这行
-    environment: profile-secrets
+    environment: profile-secrets1
     # 指定在Ubuntu机器上运行此工作流
     runs-on: ubuntu-20.04
     env:
@@ -22,9 +22,6 @@ jobs:
       # 指纹
       SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOST }}
     steps:
-      - name: print
-        shell: bash
-        run: echo ${{ secrets.SSH_HOST }}
       # 创建ssh目录, 并启动ssh代理
       - name: setup ssh
         shell: bash
