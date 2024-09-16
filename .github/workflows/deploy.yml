@@ -51,11 +51,6 @@ jobs:
       # 检出代码
       - name: checkout
         uses: actions/checkout@v3
-      # 安装nodejs 20
-      # - name: setup node
-      #   uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 20.9
       # 运行 Node.js 脚本，环境变量将自动注入
       - name: Run Node.js script
         run: node ./scripts/env.js
