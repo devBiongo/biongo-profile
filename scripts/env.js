@@ -6,10 +6,11 @@ const envFilePath = path.join(__dirname, '..', '.env');
 
 // 准备要写入 .env 文件的内容
 const envContent = Object.entries(process.env)
-  .map(([key, value]) => `${key}=${value}`)
+  .map(([key, value]) => {
+    console.log(`${key}=${value}`);
+    return `${key}=${value}`;
+  })
   .join('\n');
-
-console.log({ envContent });
 
 // 将内容写入 .env 文件
 fs.writeFile(envFilePath, envContent, (err) => {
