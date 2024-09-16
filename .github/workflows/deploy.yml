@@ -9,7 +9,7 @@ on:
 jobs:
   publish:
     # 指定环境, 即创建环境机密时, 给环境的命名. 当然如果你创建的是仓库机密, 则无需下面这行
-    environment: dev
+    environment: prod
     # 指定在Ubuntu机器上运行此工作流
     runs-on: ubuntu-20.04
     env:
