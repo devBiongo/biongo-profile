@@ -55,7 +55,7 @@ jobs:
       - name: Run Node.js script
         run: node ./scripts/env.js
         env:
-          APP_AAA: ${{ secrets.TEST }}
+          APP_DATABASE_URL: ${{ secrets.APP_DATABASE_URL }}
       # 移除历史镜像
       - name: remove docker image and container
         run: |
