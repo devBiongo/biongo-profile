@@ -1,7 +1,9 @@
 import { db } from '@/lib/db';
+import { logger } from '@/lib/logger';
 
 export default async function Page() {
   const users = await db.user.findMany();
+  logger.info('hi1111 ');
   return (
     <div>
       <p>info</p>
