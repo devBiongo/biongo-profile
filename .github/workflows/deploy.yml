@@ -66,14 +66,9 @@ jobs:
         run: |
           docker rm -f biongo-profile || true
           docker rmi -f biongo-profile || true
-      - name: install docker-compose
-        run: sudo apt install docker-compose
       # 构建docker镜像
-      - name: build and run docker image
-        run: docker-compose up -d
-      # # 构建docker镜像
-      # - name: build docker image
-      #   run: docker build --no-cache -f ./Dockerfile -t biongo-profile .
-      # # 启动新的docker镜像
-      # - name: start docker container
-      #   run: docker run -d -p 80:3000 --name biongo-profile biongo-profile
+      - name: build docker image
+        run: docker build --no-cache -f ./Dockerfile -t biongo-profile .
+      # 启动新的docker镜像
+      - name: start docker container
+        run: docker run -d -p 80:3000 --name biongo-profile biongo-profile
