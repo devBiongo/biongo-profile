@@ -56,15 +56,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20.9
-      # 安装pnpm
-      - name: install pnpm
-        run: npm install -g pnpm
-      # 安装依赖
-      - name: install dependencies
-        run: pnpm install
-      # 构建
-      - name: build
-        run: pnpm build
+      # # 安装pnpm
+      # - name: install pnpm
+      #   run: npm install -g pnpm
+      # # 安装依赖
+      # - name: install dependencies
+      #   run: pnpm install
+      # # 构建
+      # - name: build
+      #   run: pnpm build
       # 移除历史镜像
       - name: remove docker image and container
         run: |
