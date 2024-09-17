@@ -1,5 +1,7 @@
 FROM node:20.9.0
 
+FROM node:20.9.0
+
 RUN apt-get update && apt-get install -y nginx
 
 WORKDIR /app
@@ -20,4 +22,4 @@ RUN pnpm build
 EXPOSE 80
 
 # 启动 Nginx 和 Node.js 应用
-CMD ["sh", "-c", "service nginx start && pnpm start"]
+CMD ["nginx", "-g", "daemon off;"]
