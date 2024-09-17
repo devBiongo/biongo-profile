@@ -9,9 +9,9 @@ COPY package*.json ./
 COPY pnpm-lock.yaml ./
 COPY . .
 
-# 复制 Nginx 配置文件
-# COPY configs/*.conf /etc/nginx/
-COPY configs/test.conf /etc/nginx/nginx.conf
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx_default.conf /etc/nginx/nginx.conf
+RUN rm -rf ./nginx.conf ./nginx_default.conf
 
 # 安装 pnpm 并安装依赖
 RUN npm install -g pnpm
