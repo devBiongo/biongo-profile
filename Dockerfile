@@ -20,4 +20,4 @@ RUN pnpm build
 EXPOSE 80
 
 # 启动 Nginx 和 Node.js 应用
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["./script/start.sh"]
