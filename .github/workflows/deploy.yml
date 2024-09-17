@@ -66,4 +66,4 @@ jobs:
         run: docker build --no-cache -f ./Dockerfile -t biongo-profile .
       # 启动新的docker镜像
       - name: start docker container
-        run: docker run -d -p 80:80 -v /develop/apps/biongo-profile/logs:/app/logs --name biongo-profile biongo-profile
+        run: docker run -d -p 3000:80 -v /develop/apps/biongo-profile/logs:/app/logs --name biongo-profile biongo-profile
