@@ -1,18 +1,32 @@
-import { db } from '@/lib/db';
-import { logger } from '@/lib/logger';
+'use client';
 
-export default async function Page() {
-  const users = await db.user.findMany();
-  logger.info('');
+import http from '@/lib/http';
+import { useQuery } from '@tanstack/react-query';
+
+export default function Page() {
+  const { data, error, isLoading } = useQuery({
+    queryKey: ['fetchUsers'],
+    async queryFn() {
+      const data: Array<{ id: string; name: string; email: string }> =
+        await http.post('/user', {});
+      return data;
+    },
+  });
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error loading data.</div>;
+  console.log(data);
   return (
     <div>
       <p>info</p>
-      {users.map((user) => (
-        <div key={user.id}>
-          <p>name: {user.name}</p>
-          <p>email: {user.email}</p>
-        </div>
-      ))}
+      <p>{new Date().toLocaleTimeString()}</p>
+      <div>
+        {data?.map((user) => (
+          <div key={user.id}>
+            <span>{user.name}</span>-----
+            <span>{user.email}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
