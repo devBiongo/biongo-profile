@@ -14,7 +14,6 @@ export default function Page() {
   });
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading data.</div>;
-  console.log(data);
   return (
     <div>
       <p>info</p>
