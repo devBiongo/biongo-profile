@@ -3,7 +3,7 @@ import { logger } from '@/lib/logger';
 
 export default async function Page() {
   const users = await db.user.findMany();
-  logger.info('hi1111 ');
+  logger.info('');
   return (
     <div>
       <p>info</p>
