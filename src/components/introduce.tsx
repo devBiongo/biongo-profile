@@ -50,10 +50,10 @@ export default function Introduce() {
         triggerOnce={true}
       >
         <h1 className="mb-10 mt-4 text-2xl sm:text-4xl">
-          <span>Hi,My name is biongo.</span>
-          <p className="text-[14px]">
-            I share stories about #programming, #gaming, #content-creation and
-            #life on the Internet.
+          <span>Hi ! My name is Bion Go.</span>
+          <p className="text-[16px]">
+            I share stories about #programming, #gaming, #music and #life on the
+            Internet.
           </p>
         </h1>
       </Fade>
@@ -67,7 +67,7 @@ export default function Introduce() {
         }}
       >
         <Link
-          href={'#'}
+          href="mailto:biongo.dev@gmail.com"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 
           rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 dark:bgwhile/10
           active:scale-105 transition
@@ -77,7 +77,7 @@ export default function Introduce() {
           <Mail color="#9ca3af" />
         </Link>
         <a
-          href={'#'}
+          href={'https://www.instagram.com/biongo60/?next=%2F'}
           className=" bg-gray-900 p-4 text-white flex items-center gap-2 
           rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition 
           cursor-pointer border-black dark:bg-white/10 dark:text-white/60
@@ -87,7 +87,7 @@ export default function Introduce() {
           <BsLinkedin />
         </a>
         <a
-          href={'#'}
+          href={'https://github.com/devBiongo'}
           className=" bg-gray-900 p-4 text-white flex items-center gap-2 text-[1.35rem]
           rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition 
           cursor-pointer border-black dark:bg-white/10 dark:text-white/60

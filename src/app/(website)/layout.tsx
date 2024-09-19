@@ -18,7 +18,7 @@ export default function WebsiteLayout({
         xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]"
       />
       <Navbar />
-      {children}
+      <div className="px-4 lg:px-16 xl:px-32 2xl:px-44"> {children}</div>
     </div>
   );
 }
