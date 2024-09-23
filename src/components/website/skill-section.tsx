@@ -1,19 +1,22 @@
 'use client';
 
 import { Fade } from 'react-awesome-reveal';
+import WebsiteContainer from './website-container';
 
 export default function SkillSection() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
-      {skills.map((skill, index) => (
-        <SkillCard
-          key={index}
-          title={skill.title}
-          description={skill.description}
-          progress={skill.progress}
-        />
-      ))}
-    </div>
+    <WebsiteContainer>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
+        {skills.map((skill, index) => (
+          <SkillCard
+            key={index}
+            title={skill.title}
+            description={skill.description}
+            progress={skill.progress}
+          />
+        ))}
+      </div>
+    </WebsiteContainer>
   );
 }
 
