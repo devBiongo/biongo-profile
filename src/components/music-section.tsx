@@ -33,7 +33,7 @@ export default function MusicSection() {
                 delay={200}
                 cascade
                 damping={1e-1}
-                triggerOnce={false}
+                triggerOnce={true}
               >
                 <div
                   style={{
@@ -57,7 +57,7 @@ export default function MusicSection() {
                 delay={200}
                 cascade
                 damping={1e-1}
-                triggerOnce={false}
+                triggerOnce={true}
               >
                 <div
                   style={{
@@ -83,7 +83,7 @@ export default function MusicSection() {
                 delay={200}
                 cascade
                 damping={1e-1}
-                triggerOnce={false}
+                triggerOnce={true}
               >
                 <div
                   style={{
