@@ -29,7 +29,7 @@ const SkillCard = ({
   progress: number;
 }) => {
   return (
-    <Fade direction="up" delay={400} cascade damping={1e-1} triggerOnce={true}>
+    <Fade direction="up" delay={200} cascade damping={1e-1} triggerOnce={true}>
       <div className="shadow p-3 rounded-sm flex flex-col gap-8 py-6">
         <p>{title}</p>
         <ProgressBar progress={progress} />
