@@ -28,3 +28,11 @@ model Post {
   author    User    @relation(fields: [authorId], references: [id])
   authorId  Int
 }
+
+model Log {
+  id      Int      @id @default(autoincrement())
+  content String
+  host    String
+  referer String
+  time    DateTime @default(now())
+}
