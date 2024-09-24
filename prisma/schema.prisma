@@ -36,3 +36,16 @@ model Log {
   referer String
   time    DateTime @default(now())
 }
+
+model AccessLog {
+  id        Int      @id @default(autoincrement())
+  ip        String
+  hostname  String
+  country   String
+  region    String
+  city      String
+  postal    String
+  timezone  String
+  org       String
+  timestamp DateTime @default(now())
+}

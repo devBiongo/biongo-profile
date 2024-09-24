@@ -7,7 +7,7 @@ import { FaGithubSquare } from 'react-icons/fa';
 import { Mail } from 'lucide-react';
 import { Fade } from 'react-awesome-reveal';
 import { motion } from 'framer-motion';
-import { useSectionInView } from '@/hooks/useInView';
+import { useSectionInView } from '@/hooks/useSectionInView';
 
 export default function Introduce() {
   const { ref } = useSectionInView('#home', 0.5);

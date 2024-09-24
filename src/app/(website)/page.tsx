@@ -1,29 +1,30 @@
+'use client';
+
 import Introduce from '@/components/introduce';
 import MusicSection from '@/components/music-section';
 import SkillSection from '@/components/website/skill-section';
-import { db } from '@/lib/db';
-import { headers } from 'next/headers';
+import axios from 'axios';
+import { useEffect } from 'react';
 
-function getIP() {
-  const FALLBACK_IP_ADDRESS = '0.0.0.0';
-  const forwardedFor = headers().get('x-forwarded-for');
-
-  if (forwardedFor) {
-    return forwardedFor.split(',')[0] ?? FALLBACK_IP_ADDRESS;
-  }
-
-  return headers().get('x-real-ip') ?? FALLBACK_IP_ADDRESS;
-}
-
-export default async function Page() {
-  const headersList = await headers();
-  await db.log.create({
-    data: {
-      host: headersList.get('host') || '',
-      referer: headersList.get('referer') || '',
-      content: getIP(),
-    },
-  });
+export default function Page() {
+  useEffect(() => {
+    axios
+      .get('https://api.ipify.org?format=json')
+      .then((response) => {
+        const ip = response.data.ip;
+        return axios.get(`https://ipinfo.io/widget/demo/${ip}`);
+      })
+      .then((ipInfoResponse) => {
+        return axios.post('/api/ipinfo', { data: ipInfoResponse.data });
+      })
+      .then((logInfoResponse) => {
+        console.log('IP Info:', logInfoResponse.data);
+        return logInfoResponse.data;
+      })
+      .catch((error) => {
+        console.error('Error fetching IP info:', error);
+      });
+  }, []);
   return (
     <main className="flex flex-col gap-20 items-center py-20 md:pt-28 ">
       <Introduce />
