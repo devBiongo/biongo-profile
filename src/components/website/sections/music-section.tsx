@@ -30,7 +30,7 @@ export default function MusicSection() {
             <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
               <Fade
                 direction="up"
-                delay={200}
+                delay={400}
                 cascade
                 damping={1e-1}
                 triggerOnce={true}
@@ -54,7 +54,7 @@ export default function MusicSection() {
               </Fade>
               <Fade
                 direction="up"
-                delay={200}
+                delay={400}
                 cascade
                 damping={1e-1}
                 triggerOnce={true}
@@ -80,7 +80,7 @@ export default function MusicSection() {
               </Fade>
               <Fade
                 direction="up"
-                delay={200}
+                delay={400}
                 cascade
                 damping={1e-1}
                 triggerOnce={true}

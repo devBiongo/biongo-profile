@@ -1,4 +1,4 @@
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
+import { UserAvatar } from '../user-avatar';
 
 export default function Header() {
   return (
@@ -9,12 +9,7 @@ export default function Header() {
         </div>
         <div className="text-xl text-blue-400">Admin</div>
         <div className="flex justify-between items-center">
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
+          <UserAvatar />
         </div>
       </div>
     </header>

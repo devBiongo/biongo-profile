@@ -1,14 +1,14 @@
-'use client';
-
 import NextLink from 'next/link';
-import { SearchButton } from './SearchButton';
-import { useActiveSectionContext } from '@/containers/active-section';
+
 import { ModeToggle } from './mode-toggle';
 import { Link } from '@/types/types';
 import WebsiteContainer from './website-container';
+import { Button } from '../ui/button';
+import { auth } from '@clerk/nextjs/server';
 
-export default function Header({ links }: { links: Link[] }) {
-  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
+export default async function Header({ links }: { links: Link[] }) {
+  const { userId } = auth();
+
   return (
     <header
       className={`hidden md:flex  fixed top-0 left-0 w-full py-4
@@ -31,10 +31,10 @@ export default function Header({ links }: { links: Link[] }) {
                   <NextLink
                     href={link.hash}
                     className="hidden lg:block"
-                    onClick={() => {
-                      setActiveSection(link.hash);
-                      setTimeOfLastClick(Date.now());
-                    }}
+                    // onClick={() => {
+                    //   setActiveSection(link.hash);
+                    //   setTimeOfLastClick(Date.now());
+                    // }}
                   >
                     {link.nameEng}
                   </NextLink>
@@ -42,8 +42,16 @@ export default function Header({ links }: { links: Link[] }) {
               ))}
             </ul>
           </nav>
-          <div className="w-[300px]">
-            <SearchButton />
+          <div>
+            {!userId ? (
+              <NextLink href={'/sign-in'}>
+                <Button variant={'outline'}>Login</Button>
+              </NextLink>
+            ) : (
+              <NextLink href={'/dashboard'}>
+                <Button variant={'outline'}>Dashboard</Button>
+              </NextLink>
+            )}
           </div>
           <div className="hidden">
             <ModeToggle />
