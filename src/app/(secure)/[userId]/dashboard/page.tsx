@@ -1,6 +1,6 @@
 'use client';
 
-import http from '@/lib/http';
+import http from '@/lib/client/http';
 import { useQuery } from '@tanstack/react-query';
 
 export default function Page() {

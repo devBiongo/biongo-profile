@@ -1,4 +1,4 @@
-import { Link } from './types';
+import { Link } from '../../types/types';
 
 export const links: Link[] = [
   { nameEng: 'Home', hash: '#home' },

@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import WebsiteContainer from './website/website-container';
+import WebsiteContainer from '../website-container';
 import { Fade } from 'react-awesome-reveal';
 
 export default function MusicSection() {

@@ -1,7 +1,7 @@
 'use client';
 
 import { Fade } from 'react-awesome-reveal';
-import WebsiteContainer from './website-container';
+import WebsiteContainer from '../website-container';
 
 export default function SkillSection() {
   return (

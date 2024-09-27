@@ -1,11 +1,11 @@
 'use client';
 
-import { Link } from '@/lib/types';
 import NextLink from 'next/link';
 import { SearchButton } from './SearchButton';
 import { useActiveSectionContext } from '@/containers/active-section';
 import { ModeToggle } from './mode-toggle';
-import WebsiteContainer from './website/website-container';
+import { Link } from '@/types/types';
+import WebsiteContainer from './website-container';
 
 export default function Header({ links }: { links: Link[] }) {
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();

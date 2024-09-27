@@ -1,4 +1,4 @@
-import { links } from '@/lib/data';
+import { links } from '@/lib/client/data';
 import HamburgerMenu from './hamburger-menu';
 import Header from './header';
 

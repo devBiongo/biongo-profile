@@ -1,11 +1,11 @@
 'use client';
 import { useActiveSectionContext } from '@/containers/active-section';
-import { Link } from '@/lib/types';
 import { AnimatePresence, motion } from 'framer-motion';
 import FaHamburger from 'hamburger-react';
 import NextLink from 'next/link';
 import { useState } from 'react';
 import clsx from 'clsx';
+import { Link } from '@/types/types';
 
 export default function HamburgerMenu({ links }: { links: Link[] }) {
   const [isOpen, setIsOpen] = useState(false);

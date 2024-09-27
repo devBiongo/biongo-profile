@@ -65,6 +65,10 @@ const config: Config = {
           '5': 'hsl(var(--chart-5))',
         },
       },
+      flex: {
+        '2': '2 1 0%',
+        '3': '3 4 5%',
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
