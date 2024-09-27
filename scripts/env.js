@@ -7,7 +7,10 @@ const customPrefix = 'APP_';
 
 const envContent = Object.entries(process.env)
   .filter(([key]) => key.startsWith(customPrefix))
-  .map(([key, value]) => `${key.replace(customPrefix, '')}=${value}`)
+  .map(([key, value]) => {
+    console.log(key);
+    return `${key.replace(customPrefix, '')}=${value}`;
+  })
   .join('\n');
 console.log(11111, envContent);
 fs.writeFile(envFilePath, envContent, (err) => {
