@@ -10,12 +10,9 @@ import { useUser } from '@clerk/nextjs';
 import { useActiveSectionContext } from '@/containers/active-section';
 
 export default function Header({ links }: { links: Link[] }) {
-  const { isLoaded, isSignedIn } = useUser();
+  const { isSignedIn } = useUser();
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
-  if (!isLoaded || !isSignedIn) {
-    return <div>Loading...</div>;
-  }
   return (
     <header
       className={`hidden md:flex  fixed top-0 left-0 w-full py-4
