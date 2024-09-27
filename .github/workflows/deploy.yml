@@ -56,6 +56,10 @@ jobs:
         run: node ./scripts/env.js
         env:
           APP_DATABASE_URL: ${{ secrets.APP_DATABASE_URL }}
+          APP_CLERK_SECRET_KEY: ${{ secrets.APP_CLERK_SECRET_KEY }}
+          APP_NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.APP_NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+          APP_NEXT_PUBLIC_CLERK_SIGN_IN_URL: ${{ secrets.APP_NEXT_PUBLIC_CLERK_SIGN_IN_URL }}
+          APP_NEXT_PUBLIC_CLERK_SIGN_UP_URL: ${{ secrets.APP_NEXT_PUBLIC_CLERK_SIGN_UP_URL }}
       # 移除历史镜像
       - name: remove docker image and container
         run: |
