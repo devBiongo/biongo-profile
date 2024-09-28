@@ -61,6 +61,7 @@ export default function HamburgerMenu({ links }: { links: Link[] }) {
                   onClick={() => {
                     setActiveSection(link.hash);
                     setTimeOfLastClick(Date.now());
+                    setIsOpen(false);
                   }}
                 >
                   {link.nameEng}

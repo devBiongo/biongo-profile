@@ -1,8 +1,10 @@
 'use client';
 
+import About from '@/components/website/sections/about';
 import Introduce from '@/components/website/sections/introduce';
-import MusicSection from '@/components/website/sections/music-section';
-import SkillSection from '@/components/website/sections/skill-section';
+import Musics from '@/components/website/sections/musics';
+import Skills from '@/components/website/sections/skills';
+
 import { isDev } from '@/lib/common';
 import axios from 'axios';
 import { useEffect } from 'react';
@@ -31,9 +33,9 @@ export default function Page() {
   return (
     <main className="flex flex-col gap-20 items-center py-20 md:pt-28 ">
       <Introduce />
-      <SkillSection />
-      <MusicSection />
-      <div className="mt-10 text-blue-500 text-2xl">作成中...</div>
+      <Skills />
+      <About />
+      <Musics />
     </main>
   );
 }
