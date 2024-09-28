@@ -63,8 +63,10 @@ jobs:
       # 移除历史镜像
       - name: remove docker image and container
         run: |
-          docker rm -f ${{ secrets.PROJECT_NAME}} || true
-          docker rmi -f ${{ secrets.PROJECT_NAME}} || true
+          docker rm -f ${{ secrets.PROJECT_NAME }} || true
+          docker rmi -f ${{ secrets.PROJECT_NAME }} || true
+          docker system prune -f --volumes
+          docker builder prune -f
       # 构建docker镜像
       - name: build docker image
         run: docker build --no-cache -f ./Dockerfile -t ${{ secrets.PROJECT_NAME}} .

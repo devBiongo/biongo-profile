@@ -71,6 +71,15 @@ const config: Config = {
       },
     },
   },
+  images: {
+    domains: ['img.clerk.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
+  },
   plugins: [require('tailwindcss-animate')],
 };
 export default config;

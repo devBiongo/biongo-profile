@@ -1,4 +1,6 @@
 {
+  // 优先全路径
+  "typescript.preferences.importModuleSpecifier": "non-relative",
   // 确保保存时格式化
   "editor.formatOnSave": true,
 

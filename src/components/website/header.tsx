@@ -8,6 +8,8 @@ import WebsiteContainer from './website-container';
 import { Button } from '../ui/button';
 import { useUser } from '@clerk/nextjs';
 import { useActiveSectionContext } from '@/containers/active-section';
+import { House } from 'lucide-react';
+import LoginButton from '@/components/login-button';
 
 export default function Header({ links }: { links: Link[] }) {
   const { isSignedIn } = useUser();
@@ -49,11 +51,13 @@ export default function Header({ links }: { links: Link[] }) {
           <div>
             {!isSignedIn ? (
               <NextLink href={'/sign-in'}>
-                <Button variant={'outline'}>Login</Button>
+                <LoginButton />
               </NextLink>
             ) : (
               <NextLink href={'/dashboard'}>
-                <Button variant={'outline'}>Dashboard</Button>
+                <Button variant={'outline'}>
+                  <House />
+                </Button>
               </NextLink>
             )}
           </div>

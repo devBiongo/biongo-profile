@@ -1,3 +1,5 @@
+import dayjs from 'dayjs';
+
 export function getCurrentDate() {
   const date = new Date();
   const year = date.getFullYear();
@@ -8,4 +10,8 @@ export function getCurrentDate() {
 
 export function isDev() {
   return process.env.NODE_ENV === 'development';
+}
+
+export function formatDate(target: Date, pattern?: string) {
+  return dayjs(target).format(pattern || 'YYYY-MM-DD HH:mm:ss');
 }

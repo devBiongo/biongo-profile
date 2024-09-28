@@ -1,11 +1,7 @@
+import { menus } from '@/components/secure/menu';
 import { cn } from '@/lib/utils';
-import { BarChart } from 'lucide-react';
 
-const menus = [
-  { label: 'dashboard', icon: BarChart },
-  { label: 'dashboard', icon: BarChart },
-  { label: 'dashboard', icon: BarChart },
-];
+import NextLink from 'next/link';
 
 export function Sidebar() {
   return (
@@ -18,15 +14,15 @@ export function Sidebar() {
     >
       <div className="h-full px-3 py-4 overflow-y-auto bg-white dark:bg-gray-800">
         <ul className="space-y-2 font-medium">
-          {menus.map(({ label, icon: Icon }) => (
+          {menus.map(({ label, icon: Icon, path }) => (
             <li key={label}>
-              <a
-                href="#"
+              <NextLink
+                href={path}
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <Icon className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-                <span className="ms-3">Dashboard</span>
-              </a>
+                <span className="ms-3">{label}</span>
+              </NextLink>
             </li>
           ))}
         </ul>
