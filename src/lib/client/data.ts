@@ -2,9 +2,8 @@ import { Link } from '../../types/types';
 
 export const links: Link[] = [
   { nameEng: 'Home', hash: '#home' },
-  { nameEng: 'About', hash: '#about' },
-  { nameEng: 'Projects', hash: '#projects' },
   { nameEng: 'Skills', hash: '#skills' },
+  { nameEng: 'About', hash: '#about' },
   { nameEng: 'Musics', hash: '#musics' },
-  { nameEng: 'Contact', hash: '#contact' },
+  { nameEng: 'Dashboard', hash: '/dashboard' },
 ];

@@ -8,7 +8,7 @@ export default function Skills() {
   const { ref } = useSectionInView('#skills', 0.5);
   return (
     <WebsiteContainer>
-      <div
+      <section
         id="skills"
         ref={ref}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full"
@@ -21,7 +21,7 @@ export default function Skills() {
             progress={skill.progress}
           />
         ))}
-      </div>
+      </section>
     </WebsiteContainer>
   );
 }
@@ -54,28 +54,28 @@ const ProgressBar = ({ progress }: { progress: number }) => {
 
 const skills: any[] = [
   {
-    title: 'React / NextJS / NodeJs',
+    title: 'ReactJS / NextJS / NodeJS',
     description:
       'I developed some personal websites and the Microsoft 365 networking connectivity frontend, and contributed to the FluentUI.',
-    progress: 70,
+    progress: 80,
   },
   {
     title: 'Java / Spring Family',
     description:
       'I developed the Microsoft 365 networking connectivity backend with ASP.NET, and created some Unity3D games.',
-    progress: 80,
-  },
-  {
-    title: 'AWS / Docker / Nginx / CI/CD',
-    description:
-      'I developed the Microsoft 365 networking connectivity backend with ASP.NET, and created some Unity3D games.',
-    progress: 70,
+    progress: 75,
   },
   {
     title: 'Golang / Gin',
     description:
       'I developed the Microsoft 365 networking connectivity backend with ASP.NET, and created some Unity3D games.',
-    progress: 65,
+    progress: 60,
+  },
+  {
+    title: 'AWS / Docker / Nginx / CI/CD',
+    description:
+      'I developed the Microsoft 365 networking connectivity backend with ASP.NET, and created some Unity3D games.',
+    progress: 55,
   },
   {
     title: 'Python',

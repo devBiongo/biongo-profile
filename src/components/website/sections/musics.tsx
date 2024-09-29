@@ -4,112 +4,44 @@ import WebsiteContainer from '../website-container';
 import { Fade } from 'react-awesome-reveal';
 import { useSectionInView } from '@/hooks/useSectionInView';
 
+const singersSrcs = [
+  '/singers/higedan.jpg',
+  '/singers/justin.jpg',
+  '/singers/yonezu.jpg',
+  '/singers/bruno.jpg',
+  '/singers/yoasobi.jpg',
+];
+
 export default function Musics() {
   const { ref } = useSectionInView('#musics', 0.5);
   return (
-    <section id="musics" ref={ref}>
-      <div className="relative overflow-hidden h-[1000px]">
-        {/* <div
-        style={{
-          width: '75%',
-          height: 'auto',
-          position: 'relative',
-          left: -300,
-          top: -10,
-        }}
-      >
-        <Image
-          src="/bg.webp"
-          layout="responsive"
-          width={525}
-          height={517}
-          alt=""
-        />
-      </div> */}
-
-        <div className="w-full h-full">
-          <WebsiteContainer>
-            <div className="flex w-full gap-8">
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-                <Fade
-                  direction="up"
-                  delay={400}
-                  cascade
-                  damping={1e-1}
-                  triggerOnce={true}
-                >
-                  <div
-                    style={{
-                      width: 'auto',
-                      height: 'auto',
-                      position: 'relative',
-                    }}
-                  >
-                    <Image
-                      className="rounded-xl"
-                      src="/higedan.jpg"
-                      layout="responsive"
-                      width={525}
-                      height={517}
-                      alt=""
-                    />
-                  </div>
-                </Fade>
-                <Fade
-                  direction="up"
-                  delay={400}
-                  cascade
-                  damping={1e-1}
-                  triggerOnce={true}
-                >
-                  <div
-                    style={{
-                      width: 'auto',
-                      height: '340px',
-                      position: 'relative',
-                      overflow: 'hidden',
-                    }}
-                    className="rounded-xl"
-                  >
-                    <Image
-                      className="rounded-xl"
-                      src="/yoasobi.jpg"
-                      layout="responsive"
-                      width={525}
-                      height={517}
-                      alt=""
-                    />
-                  </div>
-                </Fade>
-                <Fade
-                  direction="up"
-                  delay={400}
-                  cascade
-                  damping={1e-1}
-                  triggerOnce={true}
-                >
-                  <div
-                    style={{
-                      width: 'auto',
-                      height: 'auto',
-                      position: 'relative',
-                    }}
-                  >
-                    <Image
-                      className="rounded-xl"
-                      src="/justin.jpg"
-                      layout="responsive"
-                      width={300}
-                      height={300}
-                      alt=""
-                    />
-                  </div>
-                </Fade>
+    <WebsiteContainer>
+      <section id="musics" ref={ref} className="flex flex-col gap-10">
+        <p>
+          <span className="text-xl shadow p-2">My favorite singers</span>
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-4">
+          {singersSrcs.map((item, index) => (
+            <Fade
+              key={index}
+              direction="up"
+              delay={400}
+              cascade
+              damping={1e-1}
+              triggerOnce={true}
+            >
+              <div className="relative w-full h-0 pb-[100%] overflow-hidden">
+                <Image
+                  className="absolute inset-0 w-full h-full object-cover rounded-md"
+                  src={item}
+                  fill
+                  alt=""
+                />
               </div>
-            </div>
-          </WebsiteContainer>
+            </Fade>
+          ))}
         </div>
-      </div>
-    </section>
+      </section>
+    </WebsiteContainer>
   );
 }

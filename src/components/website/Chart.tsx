@@ -19,7 +19,7 @@ const PolarAreaChart = () => {
     datasets: [
       {
         label: 'Activity Scores',
-        data: [8, 5, 7, 3, 6], // 示例数据，根据需要调整
+        data: [9, 5, 9, 3, 3], // 示例数据，根据需要调整
         backgroundColor: [
           'rgba(255, 99, 132, 0.6)',
           'rgba(54, 162, 235, 0.6)',
@@ -47,7 +47,7 @@ const PolarAreaChart = () => {
       },
       title: {
         display: true,
-        text: 'Activity Polar Area Chart',
+        text: 'My daily schedule',
       },
     },
   };

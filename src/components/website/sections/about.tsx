@@ -9,32 +9,27 @@ import Image from 'next/image';
 export default function About() {
   const { ref } = useSectionInView('#about', 0.5);
   return (
-    <section id="about" ref={ref} className="w-full">
-      <WebsiteContainer>
+    <WebsiteContainer>
+      <section id="about" ref={ref} className="w-full">
         <div className="flex flex-col md:flex-row gap-2">
-          <div className="flex-1 shadow rounded-xl p-4 bg-white">
-            <RadarChart />
+          <div className="flex-2">
+            <div className="bg-white shadow rounded-xl p-4 h-full">
+              <RadarChart />
+            </div>
           </div>
-          <div className="flex-2 shadow rounded-xl p-4 flex flex-col gap-3 bg-white">
-            <p>{"Currently I'm living Kawasaki, Janpan."}</p>
-            <div className="w-auto h-auto relative overflow-hidden">
-              <div className="absolute right-[25%] top-[60%]">
-                <Waves />
+          <div className="flex-3">
+            <div className="shadow rounded-xl p-4 flex flex-col gap-3 bg-white h-full">
+              <p>{"Currently I'm living Kawasaki, Janpan."}</p>
+              <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
+                <div className="absolute right-[25%] top-[60%]">
+                  <Waves />
+                </div>
+                <Image src="/map.png" alt="map" fill className="rounded-lg" />
               </div>
-
-              <Image
-                src="/map.png"
-                width={1364}
-                height={808}
-                alt="respositive"
-                quality={100}
-                className="rounded-xl"
-                layout="responsive"
-              />
             </div>
           </div>
         </div>
-      </WebsiteContainer>
-    </section>
+      </section>
+    </WebsiteContainer>
   );
 }
