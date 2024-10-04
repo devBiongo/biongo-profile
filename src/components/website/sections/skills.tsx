@@ -3,6 +3,7 @@
 import { Fade } from 'react-awesome-reveal';
 import WebsiteContainer from '../website-container';
 import { useSectionInView } from '@/hooks/useSectionInView';
+import { motion } from 'framer-motion';
 
 export default function Skills() {
   const { ref } = useSectionInView('#skills', 0.5);
@@ -45,9 +46,17 @@ const SkillCard = ({
 };
 
 const ProgressBar = ({ progress }: { progress: number }) => {
+  // 确保 progress 值在 0 和 100 之间
+  const normalizedProgress = Math.min(100, Math.max(0, progress));
+
   return (
-    <div className="w-3/5 bg-gray-200  h-4">
-      <div className="bg-[#9ca3af] h-4" style={{ width: `${progress}%` }}></div>
+    <div className="w-4/5 bg-gray-200 h-4 rounded">
+      <motion.div
+        className="bg-[#9ca3af] h-4 rounded"
+        initial={{ width: 0 }} // 初始宽度为0
+        animate={{ width: `${normalizedProgress}%` }} // 动画到progress的值
+        transition={{ duration: 5 }} // 设置动画持续时间
+      />
     </div>
   );
 };

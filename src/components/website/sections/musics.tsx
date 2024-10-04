@@ -30,7 +30,7 @@ export default function Musics() {
               damping={1e-1}
               triggerOnce={true}
             >
-              <div className="relative w-full h-0 pb-[100%] overflow-hidden">
+              <div className="relative w-full h-0 pb-[100%] overflow-hidden hover:scale-105 transition-all duration-500">
                 <Image
                   className="absolute inset-0 w-full h-full object-cover rounded-md"
                   src={item}

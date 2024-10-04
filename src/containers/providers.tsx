@@ -2,6 +2,7 @@ import React from 'react';
 import ActiveSectionContextProvider from './active-section';
 import { QueryProvider } from './query-provider';
 import { ThemeProvider } from './theme-provider';
+import ToasterContext from '@/containers/ToasterContext';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -12,6 +13,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
       disableTransitionOnChange
     >
       <ActiveSectionContextProvider>
+        <ToasterContext />
         <QueryProvider>{children}</QueryProvider>
       </ActiveSectionContextProvider>
     </ThemeProvider>
